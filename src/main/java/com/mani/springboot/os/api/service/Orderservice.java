@@ -28,14 +28,14 @@ public class Orderservice {
 		
 		Payment paymentresponse=template.postForObject("http://localhost:9191/payment/dopayment", payment, Payment.class);
 		response=paymentresponse.getPaymentstatus().equals("success")?"Payment Successful":"something went wrong";
-		System.out.println(response);
-		System.out.println(paymentresponse.getTransactionId());
+		// System.out.println(response);
+		// System.out.println(paymentresponse.getTransactionId());
 		 orderrepository.save(order);
-		 System.out.println(paymentresponse.toString());
-//		 return new TransactionResponse(order,paymentresponse.getAmount(),paymentresponse.getTransactionId(),response);
-		TransactionResponse tr=new TransactionResponse(order,paymentresponse.getAmount(),paymentresponse.getTransactionId(),response);
-		System.out.println(tr.toString());
-		return tr;
+		 // System.out.println(paymentresponse.toString());
+		 return new TransactionResponse(order,paymentresponse.getAmount(),paymentresponse.getTransactionId(),response);
+		// TransactionResponse tr=new TransactionResponse(order,paymentresponse.getAmount(),paymentresponse.getTransactionId(),response);
+		// System.out.println(tr.toString());
+		// return tr;
 	}
 
 }
