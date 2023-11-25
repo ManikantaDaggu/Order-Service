@@ -6,14 +6,14 @@ public class TransactionResponse {
 	private Order order;
 	private double amount;
 	private String transactionId;
-	private String message;
+	private String response;
 	
 	
 	public TransactionResponse() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public TransactionResponse(Order order2, double amount2, String transactionId2, String response) {
+	public TransactionResponse(Order order, double amount, String transactionId, String response) {
 		this.order=order;
 		this.amount=amount;
 		this.transactionId=transactionId;
@@ -38,16 +38,17 @@ public class TransactionResponse {
 	public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;
 	}
-	public String getMessage() {
-		return message;
+	// public String getMessage() {
+	// 	return message;
+	// }
+	// public void setMessage(String message) {
+	// 	this.message = message;
+	// }
+	public String getResponse() {
+		return response;
 	}
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	@Override
-	public String toString() {
-		return "TransactionResponse [order=" + order + ", amount=" + amount + ", transactionId=" + transactionId
-				+ ", message=" + message + "]";
+	public void setResponse(String response) {
+		this.response = response;
 	}
 	
 	
